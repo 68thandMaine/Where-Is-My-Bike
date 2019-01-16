@@ -12,9 +12,17 @@ class BikeIndex {
         }
       }
       request.open("GET", url, true);
-      // request.setRequestHeader("Accept", "application/json");
       request.send();
     });
+  }
+
+  bikeTypes(object) {
+    return object.bikes.reduce(this.countTypes, {});
+  }
+
+  countTypes(counter, bike) {
+    counter[bike.manufacturer_name] = (counter[bike.manufacturer_name] || 0) + 1;
+    return counter;
   }
 }
 
