@@ -1,29 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Practice</title>
-  </head>
-  <body>
-    <h1>Bike Index</h1>
+<head>
+  <title>Practice</title>
+</head>
+<body>
+  <header class ="header" role="banner" id="header">
+    <div class="layout-content">
+      <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">Statistcyclist</h1>
+        <p class="lead">This area should have statistics about a random location.</p>
+        <div class="container start-stats" >
+          <div class="row" id="start-stats">
+            <div class="col-md-4 card" id="someGraph1">
+              <p>Let;s put something here</p>
+              <canvas id="chart-area header1" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+              <!-- /#someGraph1 -->
+            </div>
+            <div class="col-md-4 card" id="someGraph2">
+              <p>Let's also put something here</p>
+              <canvas id="chart-area head2" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+              <!-- /#someGraph2 -->
+            </div>
+            <div class="col-md-4 card" id="someGraph3">
+              <p>Don't forget about putting something here too</p>
+              <canvas id="chart-area header3" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+              <!-- /#someGraph 3-->
+            </div>
+            <!-- /.row  -->
+          </div>
+          <!--/.container start-stats  -->
+        </div>
+        <!-- /.jumbotron -->
+      </div>
+      <!-- /.layout-content -->
+    </div>
+    <!-- /.header -->
+  </header>
+
+
+
+
+
+  <br><br><br>
+
+
+
   <form class="searchForm" action="index.html" method="post">
 
-      <label for="location">Location</label>
-      <input type="text" id="location" name="" value="">
-      <br>
-      <label for="distance">Distance</label>
-      <input type="text" id="distance" name="" value="">
-      <button id="search" type="submit" name="button">Submit</button>
+    <label for="location">Location</label>
+    <input type="text" id="location" name="" value="">
+    <br>
+    <label for="distance">Distance</label>
+    <input type="text" id="distance" name="" value="">
+    <button id="search" type="submit" name="button">Submit</button>
 
-    </form>
+  </form>
 
-    <div class="container">
-      <div id="output"></div>
+  <div class="container">
+    <div id="output"></div>
 
 
-      <canvas id="chart-area" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+    <canvas id="chart-area" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
 
-      <canvas id="chart-area2" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+    <canvas id="chart-area2" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
 
-    </div>
-  </body>
+  </div>
+</body>
 </html>
