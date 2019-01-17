@@ -86,7 +86,13 @@ body {
   box-shadow: 13%
 }
 
+.userInput {
+  max-width: 75em;
+}
 
+#search {
+  margin-top: 15%;  
+}
 
 
 .bike {

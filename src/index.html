@@ -8,8 +8,8 @@
     <div class="layout-content">
       <div class="jumbotron jumbotron-fluid">
         <h6 class="display-4" id="header">Statistcyclist</h1>
-        <!-- /.jumbotron -->
-      </div>
+          <!-- /.jumbotron -->
+        </div>
         <div class="container-fluid-fluid start-stats" >
           <div class="row" id="start-stats">
             <div class="col-lg-4" >
@@ -51,84 +51,84 @@
           </div>
           <!--/.container-fluid start-stats  -->
         </div>
-      <!-- /.layout-content -->
+        <!-- /.layout-content -->
+      </div>
+      <!-- /.header -->
+    </header>
+    <div class="userGraphs">
+      <div class="container-fluid userGraphs">
+        <div class="row userGraphs">
+          <div class="col-lg-4">
+            <div class="card userGraphCard">
+              <div class="card-body">
+                <h5 class="card-title">Bikes in your area</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Pie Chart</h6>
+                <canvas id="chart-area" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card userGraphCard -->
+            </div>
+            <!-- /.col-lg-4 -->
+          </div>
+          <div class="col-lg-4">
+            <div class="card userGraphCard">
+              <div class="card-body">
+                <h5 class="card-title">Stolen bikes vs unstolen bikes</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Pie Chart</h6>
+                <canvas id="chart-area2" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card userGraphCard -->
+            </div>
+            <!-- /.col-lg-4 -->
+          </div>
+          <div class="col-lg-4">
+            <div class="card userGraphCard">
+              <div class="card-body">
+                <h5 class="card-title">Date Range Stolen</h5>
+                <h6 class="card-subtitle mb-2 text-muted">line Chart</h6>
+                <canvas id="chart-area3" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card userGraphCard -->
+            </div>
+            <!-- /.col-lg-4 -->
+          </div>
+          <!-- /.row userGraphs -->
+        </div>
+        <!-- /.container-fluid userGraphs -->
+      </div>
+      <!-- /.userGraphs -->
     </div>
-    <!-- /.header -->
-  </header>
-  <div class="userGraphs">
-  <div class="container-fluid userGraphs">
-    <div class="row userGraphs">
-      <div class="col-lg-4">
-        <div class="card userGraphCard">
-          <div class="card-body">
-            <h5 class="card-title">Bikes in your area</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Pie Chart</h6>
-            <canvas id="chart-area" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card userGraphCard -->
-        </div>
-        <!-- /.col-lg-4 -->
-      </div>
-      <div class="col-lg-4">
-        <div class="card userGraphCard">
-          <div class="card-body">
-            <h5 class="card-title">Stolen bikes vs unstolen bikes</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Pie Chart</h6>
-            <canvas id="chart-area2" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card userGraphCard -->
-        </div>
-        <!-- /.col-lg-4 -->
-      </div>
-      <div class="col-lg-4">
-        <div class="card userGraphCard">
-          <div class="card-body">
-            <h5 class="card-title">Date Range Stolen</h5>
-            <h6 class="card-subtitle mb-2 text-muted">line Chart</h6>
-            <canvas id="chart-area3" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card userGraphCard -->
-        </div>
-        <!-- /.col-lg-4 -->
-      </div>
-      <!-- /.row userGraphs -->
-    </div>
-    <!-- /.container-fluid userGraphs -->
-  </div>
-  <!-- /.userGraphs -->
-</div>
 
-  <br><br><br>
-<div class="userForm">
-  <div class="container">
-      <div class="row">
+    <br><br><br>
+    <div class="userForm">
+      <div class="container">
         <form class="searchForm" action="index.html" method="post">
-        <div class="col-lg-6">
-          <label for="location">Location</label>
-          <input class="form-control form-control-lg"  id="location" name="" value="">
-            <!-- /#location -->
-        </div>
-        <div class="col-lg-6">
-          <label for="distance">Distance</label>
-          <input class="form-control form-control-lg"  id="distance" type="text" name="" value="">
-        </div>
-        <!-- /.searchForm -->
-        <!-- /.row -->
-      </div>
-      <div class="container-fluid">
         <div class="row">
-          <button  id="search" type="button" class="submit btn btn-secondary btn-lg btn-block">Submit</button>
+            <div class="col-lg-6 userInput">
+              <label for="location">Location</label>
+              <input class="form-control form-control-lg"  id="location" name="" value="" placeholder="zipcode">
+              <!-- /#location -->
+            </div>
+            <div class="col-lg-6 userInput">
+              <label for="distance">Distance</label>
+              <input class="form-control form-control-lg"  id="distance" type="text" name="" value="" placeholder="distance in miles">
+            </div>
 
+            <!-- /.row -->
+          </div>
         </div>
-      </div>
-        </form>
-      <!-- /.container -->
-  </div>
-  <!-- /.userForm -->
-</div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <button  id="search" type="button" class="submit btn btn-secondary btn-lg btn-block">Submit</button>
+            <!-- /.searchForm -->
+          </form>
+          </div>
+        </div>
+
+
 
 
 
@@ -136,12 +136,12 @@
 
 
 
-  <div class="container-fluid">
-    <div id="output"></div>
+    <div class="container-fluid">
+      <div id="output"></div>
 
 
 
 
-  </div>
-</body>
-</html>
+    </div>
+  </body>
+  </html>
