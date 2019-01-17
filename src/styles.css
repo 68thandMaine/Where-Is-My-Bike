@@ -2,6 +2,12 @@
   display: block;
 } */
 
+p {
+  color: #F8F9F5;
+  font-style: italic;
+  font-family: cursive;
+}
+
 body {
   background-color: #b7b7b7;
 }
@@ -28,6 +34,9 @@ body {
 }
 
 #someGraph1 {
+  background-color: #283138;
+  border-radius: 15;
+  border-spacing: 15%;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 13%
@@ -35,12 +44,18 @@ body {
 
 
 #someGraph2 {
+  background-color: #283138;
+  border-radius: 15;
+  border-spacing: 15%;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 13%
 }
 
 #someGraph3 {
+  background-color: #283138;
+  border-radius: 15;
+  border-spacing: 15%;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 13%
