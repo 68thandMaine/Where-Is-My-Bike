@@ -9,7 +9,16 @@ p {
 }
 
 body {
-  background-color: #b7b7b7;
+  background-color: #D9D9D9;
+}
+
+.card-body {
+  background-color: #283138;
+  border-radius: 15;
+  border-spacing: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 13%
 }
 
 .header {
@@ -18,19 +27,35 @@ body {
 }
 
 #header {
+  text-align: center;
+}
 
+
+.userGraphs {
+  margin-top: auto;
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.userGraphCard {
+  background-color: #283138;
+  border-radius: 15;
+  border-spacing: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 13%
 }
 
 .layout-content {
-  border-style: solid;
-  max-width: 100em;
+  max-width: auto;
   margin-left: auto;
   margin-right: auto;
-  background-color: blue;
+  background-color: #0F1418;
 }
 
-.start-stats {
-  border-style: dashed;
+#start-stats {
+  max-width: 100em;
 }
 
 #someGraph1 {
@@ -60,6 +85,9 @@ body {
   margin-right: auto;
   box-shadow: 13%
 }
+
+
+
 
 .bike {
   background-color: gray;
