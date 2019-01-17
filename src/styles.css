@@ -1,19 +1,23 @@
-* {
-  background-color: #D9D9D9;
+html, body {
+  background-color: #283138;
+  padding: 50px;
 }
 
 p {
   font-style: italic;
-  font-family: cursive;
 }
 
 .card-body {
-  background-color: #283138;
   border-radius: 15;
   border-spacing: 15%;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 13%
+}
+
+#output {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .header {
@@ -25,12 +29,18 @@ p {
   text-align: center;
 }
 
+.start-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 .userGraphs {
   margin-top: auto;
   max-width: auto;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .userGraphCard {
@@ -46,7 +56,7 @@ p {
   max-width: auto;
   margin-left: auto;
   margin-right: auto;
-  background-color: #0F1418;
+  /* background-color: #0F1418; */
 }
 
 

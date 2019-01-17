@@ -16,6 +16,23 @@ class BikeIndex {
     });
   }
 
+  getPortlandBikes() {
+    const Promise = require('es6-promise').Promise;
+    return new Promise(function(resolve, reject) {
+      const request = new XMLHttpRequest();
+      const url = `    https://bikeindex.org:443/api/v3/search?page=8&per_page=100&location=portland&distance=5&stolenness=stolen`;
+      request.onload = function() {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(Error(request.statusText));
+        }
+      }
+      request.open("GET", url, true);
+      request.send();
+    });
+  }
+
   bikeTypes(object) {
     return object.bikes.reduce(this.countTypes, {});
   }
@@ -24,6 +41,29 @@ class BikeIndex {
     counter[bike.manufacturer_name] = (counter[bike.manufacturer_name] || 0) + 1;
     return counter;
   }
+
+  countYears(counter, bike) {
+    counter[bike.year] = (counter[bike.year] || 0) + 1;
+    return counter;
+  }
+
+  getBikeYear(object) {
+    return object.bikes.reduce(this.countYears, {});
+  }
+
+  weekday(object) {
+    return object.bikes.reduce(this.countWeekdays,{});
+  }
+
+  countWeekdays(counter, bike) {
+    bike.date_stolen = new Date(bike.date_stolen);
+    console.log(bike.date_stolen);
+    counter[bike.date_stolen.getDay()] = (counter[bike.date_stolen.getDay()] || 0) + 1;
+    console.log(counter);
+    return counter;
+  }
+
+
 
   getTotalBikeCount() {
     const Promise = require('es6-promise').Promise;
@@ -41,6 +81,25 @@ class BikeIndex {
       request.send();
     });
   }
+
+  getBikeById(bikeId) {
+    const Promise = require('es6-promise').Promise;
+    return new Promise(function(resolve, reject) {
+      const request = new XMLHttpRequest();
+      const url =`https://bikeindex.org:443/api/v3/bikes/${bikeId}`;
+      request.onload = function() {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(Error(request.statusText));
+        }
+      }
+      request.open("GET", url, true);
+      request.send();
+    });
+  }
 }
+
+
 
 export { BikeIndex };
