@@ -4,27 +4,27 @@
   <title>Practice</title>
 </head>
 <body>
-  <header class ="header" role="banner" id="header">
+  <header class ="header" role="banner">
     <div class="layout-content">
       <div class="jumbotron jumbotron-fluid">
-        <h1 class="display-4">Statistcyclist</h1>
-        <p class="lead">This area should have statistics about a random location.</p>
-        <div class="container start-stats" >
+        <h6 class="display-4" id="header">Statistcyclist</h1>
+        <!-- /.jumbotron -->
+      </div>
+        <div class="container-fluid-fluid start-stats" >
           <div class="row" id="start-stats">
-
-            <div class="col-md-4" >
+            <div class="col-lg-4" >
               <div class="card">
                 <div class="card-body" id="someGraph1">
                   <p class="card-text">Let's put something here</p>
                   <canvas id="chart-area header1" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
-                  <!-- /#someGraph2 -->
+                  <!-- /#someGraph1 -->
                 </div>
                 <!-- /.card -->
               </div>
               <!-- /.col-md-4 -->
             </div>
 
-            <div class="col-md-4" >
+            <div class="col-lg-4">
               <div class="card">
                 <div class="card-body" id="someGraph2">
                   <p class="card-text">Let's put something here too</p>
@@ -36,12 +36,12 @@
               <!-- /.col-md-4 -->
             </div>
 
-            <div class="col-md-4" >
+            <div class="col-lg-4" >
               <div class="card">
                 <div class="card-body" id="someGraph3">
                   <p class="card-text">Don't forget about here</p>
                   <canvas id="chart-area header3" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
-                  <!-- /#someGraph2 -->
+                  <!-- /#someGraph3 -->
                 </div>
                 <!-- /.card -->
               </div>
@@ -49,18 +49,57 @@
             </div>
             <!-- /.row  -->
           </div>
-          <!--/.container start-stats  -->
+          <!--/.container-fluid start-stats  -->
         </div>
-        <!-- /.jumbotron -->
-      </div>
       <!-- /.layout-content -->
     </div>
     <!-- /.header -->
   </header>
-
-
-
-
+  <div class="userGraphs">
+  <div class="container-fluid userGraphs">
+    <div class="row userGraphs">
+      <div class="col-lg-4">
+        <div class="card userGraphCard">
+          <div class="card-body">
+            <h5 class="card-title">Bikes in your area</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Pie Chart</h6>
+            <canvas id="chart-area" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card userGraphCard -->
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+      <div class="col-lg-4">
+        <div class="card userGraphCard">
+          <div class="card-body">
+            <h5 class="card-title">Stolen bikes vs unstolen bikes</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Pie Chart</h6>
+            <canvas id="chart-area2" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card userGraphCard -->
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+      <div class="col-lg-4">
+        <div class="card userGraphCard">
+          <div class="card-body">
+            <h5 class="card-title">Date Stolen Line Chart</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Pie Chart</h6>
+            <canvas id="chart-area3" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card userGraphCard -->
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+      <!-- /.row userGraphs -->
+    </div>
+    <!-- /.container-fluid userGraphs -->
+  </div>
+  <!-- /.userGraphs -->
+</div>
 
   <br><br><br>
 
@@ -77,13 +116,11 @@
 
   </form>
 
-  <div class="container">
+  <div class="container-fluid">
     <div id="output"></div>
 
 
-    <canvas id="chart-area" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
 
-    <canvas id="chart-area2" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
 
   </div>
 </body>
