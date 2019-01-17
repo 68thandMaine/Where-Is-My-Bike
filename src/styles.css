@@ -1,3 +1,48 @@
+/* * {
+  display: block;
+} */
+
+body {
+  background-color: #b7b7b7;
+}
+
+.header {
+  /* border-style: solid; */
+  /* position: relative; */
+}
+
+#header {
+
+}
+
+.layout-content {
+  border-style: solid;
+  max-width: 100em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: blue;
+}
+
+.start-stats {
+  border-style: dashed;
+}
+
+#someGraph1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#someGraph2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#someGraph3 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .bike {
   background-color: gray;
   margin: 10px;
