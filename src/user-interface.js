@@ -29,7 +29,7 @@ export function buildPortlandStolenStats(body, bikeIndex) {
     type: 'pie',
     data: {
       datasets: [{
-        hoverBorderWidth: 5,
+        hoverBorderWidth: 15,
         data: data,
         backgroundColor: colors,
         label: 'Bikes'
@@ -38,6 +38,7 @@ export function buildPortlandStolenStats(body, bikeIndex) {
     },
     options: {
       animation:{
+        circumference: 1 * Math.PI,
         animateRotate: true
       },
       legend: false,
@@ -67,7 +68,7 @@ export function buildBikeTypeChart(body, bikeIndex) {
     type: 'pie',
     data: {
       datasets: [{
-        hoverBorderWidth: 5,
+        hoverBorderWidth: 15,
         data: data,
         backgroundColor: colors,
         label: 'Bikes'
@@ -76,6 +77,7 @@ export function buildBikeTypeChart(body, bikeIndex) {
     },
     options: {
       animation:{
+        circumference: 1 * Math.PI,
         animateRotate: true
       },
       legend: false,
@@ -106,7 +108,7 @@ export function buildBikeByStolen(body, bikeIndex) {
     type: 'pie',
     data: {
       datasets: [{
-        hoverBorderWidth: 5,
+        hoverBorderWidth: 10,
         data: data,
         backgroundColor: colors,
         label: 'Bikes'
@@ -115,6 +117,7 @@ export function buildBikeByStolen(body, bikeIndex) {
     },
     options: {
       animation:{
+        circumference: 15 * Math.PI,
         animateRotate: true
       },
       legend: false,
@@ -143,7 +146,7 @@ export function buildTotalBikeChart(body, bikeIndex) {
     type: 'pie',
     data: {
       datasets: [{
-        hoverBorderWidth: 5,
+        hoverBorderWidth: 15,
         data: data,
         backgroundColor: colors,
         label: 'Bikes'
@@ -152,6 +155,7 @@ export function buildTotalBikeChart(body, bikeIndex) {
     },
     options: {
       animation:{
+        circumference: 15 * Math.PI,
         animateRotate: true
       },
       legend: false,
@@ -167,13 +171,13 @@ export function buildPortlandBikeYearChart(body, bikeIndex) {
   let data = Object.values(bikeYear);
   const ctx = document.getElementById('chart-area6').getContext('2d');
 
-
+// let pointColor = #FFF80D;
   const config = {
     type: 'line',
     data: {
       datasets: [{
-        pointBackgroundColor:#fff0d8,
-        borderColor: #fff0d8,
+        pointBackgroundColor: "rgba(255, 240, 216,0)",
+        borderColor: "rgba(255, 240, 216,0)",
         data: data,
         label: 'Prevalence of Bike Manufacture Years Stolen'
       }],
@@ -183,7 +187,7 @@ export function buildPortlandBikeYearChart(body, bikeIndex) {
       spanGaps: false,
       responsive: true
     }
-  };
+  }
   window.myLine = new Chart(ctx, config);
 }
 
@@ -198,8 +202,8 @@ export function buildBikeYearChart(body, bikeIndex) {
     type: 'line',
     data: {
       datasets: [{
-        pointBackgroundColor:#fff0d8,
-        borderColor: #fff0d8,
+        pointBackgroundColor: "rgba(255, 240, 216,0)",
+        borderColor: "rgba(255, 240, 216,0)",
         data: data,
         label: 'Prevalence of Bike Manufacture Years Stolen'
       }],
