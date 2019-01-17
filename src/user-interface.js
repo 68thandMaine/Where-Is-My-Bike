@@ -5,7 +5,7 @@ import Chart from 'chart.js';
 export function buildBikeCards(body) {
   let summary = "";
   for (let i = 0; i < body.bikes.length; i++) {
-    summary += `<div class="bike" value="${body.bikes[i].id}"><p>Title: ${body.bikes[i].title}<p/><p>Manufacturer Name: ${body.bikes[i].manufacturer_name}<p/><p>Year: ${body.bikes[i].year}<p/><p>Frame Colors: ${body.bikes[i].frame_colors.join(", ")}<p/><p>Stolen: ${body.bikes[i].stolen}<p/></div>`
+    summary += `<div class="bike" value="${body.bikes[i].id}"><h3> ${body.bikes[i].title}</h3><p><strong>Manufacturer Name:<strong> ${body.bikes[i].manufacturer_name}<br><strong>Year:<strong> ${body.bikes[i].year}<br><strong>Frame Colors:</strong> ${body.bikes[i].frame_colors.join(", ")}<br><strong>Stolen:</strong> ${body.bikes[i].stolen}</p></div>`
   }
   $('#output').append(summary);
 }

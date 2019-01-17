@@ -49,6 +49,7 @@ $(document).ready(function() {
   $('.searchForm').submit(function(event) {
     event.preventDefault();
     $('.userGraphCard').slideDown();
+    $("#outputLabel").show();
 
     let location = $('#location').val();
     $('#location').val("");
