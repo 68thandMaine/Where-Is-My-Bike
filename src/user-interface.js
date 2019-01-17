@@ -10,7 +10,7 @@ export function buildBikeCards(body) {
   $('#output').append(summary);
 }
 
-export function buildPortlandStolenWeekdayChart(body, bikeIndex) {
+export function buildPortlandStolenStats(body, bikeIndex) {
   let bikeTypes = bikeIndex.bikeTypes(body);
   let label = Object.getOwnPropertyNames(bikeTypes);
   let data = Object.values(bikeTypes);
@@ -37,6 +37,7 @@ export function buildPortlandStolenWeekdayChart(body, bikeIndex) {
       labels: label
     },
     options: {
+      legend: false,
       responsive: true
     }
   };
@@ -70,16 +71,19 @@ export function buildBikeTypeChart(body, bikeIndex) {
       labels: label
     },
     options: {
+      legend: false,
       responsive: true
     }
   };
   window.myPie = new Chart(ctx, config);
 }
 
-export function buildTotalBikeChart(body, bikeIndex) {
+export function buildBikeByStolen(body, bikeIndex) {
+  let bikeTypes = bikeIndex.stolenStatus(body);
 
-  let label = Object.getOwnPropertyNames(body);
-  let data = Object.values(body);
+  let label = Object.getOwnPropertyNames(bikeTypes);
+  let data = Object.values(bikeTypes);
+  console.log(data);
   const ctx = document.getElementById('chart-area2').getContext('2d');
 
   let colors = [];
@@ -102,10 +106,67 @@ export function buildTotalBikeChart(body, bikeIndex) {
       labels: label
     },
     options: {
+      legend: false,
       responsive: true
     }
   };
   window.myPie = new Chart(ctx, config);
+}
+
+export function buildTotalBikeChart(body, bikeIndex) {
+
+  let label = Object.getOwnPropertyNames(body);
+  let data = Object.values(body);
+  const ctx = document.getElementById('chart-area5').getContext('2d');
+
+  let colors = [];
+  for (let i = 0; i < data.length; i++) {
+    let number1 = Math.floor(Math.random()*255 +1);
+    let number2 = Math.floor(Math.random()*255 +1);
+    let number3 = Math.floor(Math.random()*255 +1);
+    colors.push(`rgba(${number1}, ${number2}, ${number3}, 0.9)`);
+  }
+  console.log(colors);
+
+  const config = {
+    type: 'pie',
+    data: {
+      datasets: [{
+        data: data,
+        backgroundColor: colors,
+        label: 'Bikes'
+      }],
+      labels: label
+    },
+    options: {
+      legend: false,
+      responsive: true
+    }
+  };
+  window.myPie = new Chart(ctx, config);
+}
+
+export function buildPortlandBikeYearChart(body, bikeIndex) {
+  let bikeYear = bikeIndex.getBikeYear(body);
+  let label = Object.getOwnPropertyNames(bikeYear);
+  let data = Object.values(bikeYear);
+  const ctx = document.getElementById('chart-area6').getContext('2d');
+
+
+  const config = {
+    type: 'line',
+    data: {
+      datasets: [{
+        data: data,
+        label: 'Prevalence of Bike Manufacture Years Stolen'
+      }],
+      labels: label
+    },
+    options: {
+      responsive: true
+    }
+  };
+  window.myLine = new Chart(ctx, config);
 }
 
 export function buildBikeYearChart(body, bikeIndex) {

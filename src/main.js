@@ -1,5 +1,5 @@
 import { BikeIndex } from './bike-index.js';
-import { buildBikeCards, buildBikeTypeChart, buildTotalBikeChart, buildBikeDetailCard, buildBikeYearChart, buildPortlandStolenWeekdayChart } from './user-interface.js'
+import { buildBikeCards, buildBikeTypeChart, buildTotalBikeChart, buildBikeDetailCard, buildBikeYearChart, buildPortlandStolenStats, buildPortlandBikeYearChart, buildBikeByStolen } from './user-interface.js'
 import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
@@ -8,20 +8,30 @@ import Chart from 'chart.js';
 
 $(document).ready(function() {
   const bikeIndex = new BikeIndex();
-  $('.userGraphs').hide();
+  $('.userGraphCard').hide();
 
+  let promise2 = bikeIndex.getTotalBikeCount();
   let promise4 = bikeIndex.getPortlandBikes();
+
+  promise2.then(function(response) {
+    let body = JSON.parse(response);
+    buildTotalBikeChart(body, bikeIndex);
+  }, function(error) {
+    $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+  });
 
   promise4.then(function(response) {
     let body = JSON.parse(response);
     console.log(body);
-    buildPortlandStolenWeekdayChart(body, bikeIndex);
+    buildPortlandStolenStats(body, bikeIndex);
+    buildPortlandBikeYearChart(body, bikeIndex);
   }, function(error) {
     $('.showErrors').text(`There was an error processing your request: ${error.message}`);
   });
 
   $("#output").on("click", "div", function(){
-    let bikeId =$(this).attr("value");
+    let bikeId = $(this).attr("value");
+    console.log(bikeId);
     let promise3 = bikeIndex.getBikeById(bikeId);
     promise3.then(function(response) {
       let card = JSON.parse(response);
@@ -38,7 +48,7 @@ $(document).ready(function() {
 
   $('.searchForm').submit(function(event) {
     event.preventDefault();
-    $('.userGraphs').slideDown();
+    $('.userGraphCard').slideDown();
 
     let location = $('#location').val();
     $('#location').val("");
@@ -46,22 +56,13 @@ $(document).ready(function() {
     $('#distance').val("");
 
     let promise1 = bikeIndex.getBikes(location, distance);
-    let promise2 = bikeIndex.getTotalBikeCount();
-    console.log(promise1);
-    console.log(promise2);
 
     promise1.then(function(response) {
       let body = JSON.parse(response);
       buildBikeCards(body);
       buildBikeTypeChart(body, bikeIndex);
+      buildBikeByStolen(body, bikeIndex);
       buildBikeYearChart(body, bikeIndex);
-    }, function(error) {
-      $('.showErrors').text(`There was an error processing your request: ${error.message}`);
-    });
-
-    promise2.then(function(response) {
-      let body = JSON.parse(response);
-      buildTotalBikeChart(body, bikeIndex);
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });

@@ -3,6 +3,11 @@ html, body {
   padding: 50px;
 }
 
+html body {
+  background-color: #283138;
+  padding: 50px;
+}
+
 p {
   font-style: italic;
 }
@@ -30,8 +35,10 @@ p {
 }
 
 .start-stats {
+  background-color: rgba(255,255,255, 0.4);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
 }
 
 .userGraphs {
@@ -45,48 +52,31 @@ p {
 
 .userGraphCard {
   background-color: #283138;
+  border-top: 5;
   border-radius: 15;
   border-spacing: 15%;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 13%
-}
-
-.layout-content {
-  max-width: auto;
-  margin-left: auto;
-  margin-right: auto;
-  /* background-color: #0F1418; */
+  box-shadow: 13%;
+  margin-top: 15px;
 }
 
 
-#someGraph1 {
+
+.staticGraphs {
+  /* border-style: solid; */
+  border-color: white;
   background-color: #283138;
-  border-radius: 15;
-  border-spacing: 15%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 13%
+  border-radius: 15px;
+  /* border-spacing: 15%; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 40px 20px 50px 20px;
+  box-shadow: 0 8px 6px -6px #f2eed5;
 }
 
 
-#someGraph2 {
-  background-color: #283138;
-  border-radius: 15;
-  border-spacing: 15%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 13%
-}
 
-#someGraph3 {
-  background-color: #283138;
-  border-radius: 15;
-  border-spacing: 15%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 13%
-}
 
 .userInput {
   max-width: 75em;
