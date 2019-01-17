@@ -1,5 +1,5 @@
 import { BikeIndex } from './bike-index.js';
-import { buildBikeCards, buildBikeTypeChart } from './user-interface.js'
+import { buildBikeCards, buildBikeTypeChart, buildTotalBikeChart } from './user-interface.js'
 import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
@@ -16,13 +16,22 @@ $(document).ready(function() {
     $('#distance').val("");
 
     let bikeIndex = new BikeIndex();
-    let promise = bikeIndex.getBikes(location, distance);
-    console.log(promise);
+    let promise1 = bikeIndex.getBikes(location, distance);
+    let promise2 = bikeIndex.getTotalBikeCount();
+    console.log(promise1);
+    console.log(promise2);
 
-    promise.then(function(response) {
+    promise1.then(function(response) {
       let body = JSON.parse(response);
       buildBikeCards(body);
       buildBikeTypeChart(body, bikeIndex);
+    }, function(error) {
+      $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+    });
+
+    promise2.then(function(response) {
+      let body = JSON.parse(response);
+      buildTotalBikeChart(body, bikeIndex);
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
