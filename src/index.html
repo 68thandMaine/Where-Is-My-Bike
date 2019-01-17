@@ -85,8 +85,8 @@
       <div class="col-lg-4">
         <div class="card userGraphCard">
           <div class="card-body">
-            <h5 class="card-title">Date Stolen Line Chart</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Pie Chart</h6>
+            <h5 class="card-title">Date Range Stolen</h5>
+            <h6 class="card-subtitle mb-2 text-muted">line Chart</h6>
             <canvas id="chart-area3" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
             <!-- /.card-body -->
           </div>
@@ -102,19 +102,39 @@
 </div>
 
   <br><br><br>
+<div class="userForm">
+  <div class="container">
+      <div class="row">
+        <form class="searchForm" action="index.html" method="post">
+        <div class="col-lg-6">
+          <label for="location">Location</label>
+          <input class="form-control form-control-lg"  id="location" name="" value="">
+            <!-- /#location -->
+        </div>
+        <div class="col-lg-6">
+          <label for="distance">Distance</label>
+          <input class="form-control form-control-lg"  id="distance" type="text" name="" value="">
+        </div>
+        <!-- /.searchForm -->
+        <!-- /.row -->
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <button  id="search" type="button" class="submit btn btn-secondary btn-lg btn-block">Submit</button>
+
+        </div>
+      </div>
+        </form>
+      <!-- /.container -->
+  </div>
+  <!-- /.userForm -->
+</div>
 
 
 
-  <form class="searchForm" action="index.html" method="post">
-
-    <label for="location">Location</label>
-    <input type="text" id="location" name="" value="">
     <br>
-    <label for="distance">Distance</label>
-    <input type="text" id="distance" name="" value="">
-    <button id="search" type="submit" name="button">Submit</button>
 
-  </form>
+
 
   <div class="container-fluid">
     <div id="output"></div>
