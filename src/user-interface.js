@@ -10,26 +10,19 @@ export function buildBikeCards(body) {
   $('#output').append(summary);
 }
 
+
+
 export function buildPortlandStolenStats(body, bikeIndex) {
   let bikeTypes = bikeIndex.bikeTypes(body);
   let label = Object.getOwnPropertyNames(bikeTypes);
   let data = Object.values(bikeTypes);
-  console.log(data);
   const ctx = document.getElementById('chart-area4').getContext('2d');
-
-  let colors = [];
-  for (let i = 0; i < data.length; i++) {
-    let number1 = Math.floor(Math.random()*255 +1);
-    let number2 = Math.floor(Math.random()*255 +1);
-    let number3 = Math.floor(Math.random()*255 +1);
-    colors.push(`rgba(${number1}, ${number2}, ${number3}, 0.9)`);
-  }
-  console.log(colors);
-
+  let colors = randomColors(data);
   const config = {
     type: 'pie',
     data: {
       datasets: [{
+        hoverBorderWidth: 15,
         data: data,
         backgroundColor: colors,
         label: 'Bikes'
@@ -37,108 +30,10 @@ export function buildPortlandStolenStats(body, bikeIndex) {
       labels: label
     },
     options: {
-      legend: false,
-      responsive: true
-    }
-  };
-  window.myPie = new Chart(ctx, config);
-}
-
-export function buildBikeTypeChart(body, bikeIndex) {
-  let bikeTypes = bikeIndex.bikeTypes(body);
-  let label = Object.getOwnPropertyNames(bikeTypes);
-  let data = Object.values(bikeTypes);
-  console.log(data);
-  const ctx = document.getElementById('chart-area').getContext('2d');
-
-  let colors = [];
-  for (let i = 0; i < data.length; i++) {
-    let number1 = Math.floor(Math.random()*255 +1);
-    let number2 = Math.floor(Math.random()*255 +1);
-    let number3 = Math.floor(Math.random()*255 +1);
-    colors.push(`rgba(${number1}, ${number2}, ${number3}, 0.9)`);
-  }
-  console.log(colors);
-
-  const config = {
-    type: 'pie',
-    data: {
-      datasets: [{
-        data: data,
-        backgroundColor: colors,
-        label: 'Bikes'
-      }],
-      labels: label
-    },
-    options: {
-      legend: false,
-      responsive: true
-    }
-  };
-  window.myPie = new Chart(ctx, config);
-}
-
-export function buildBikeByStolen(body, bikeIndex) {
-  let bikeTypes = bikeIndex.stolenStatus(body);
-
-  let label = Object.getOwnPropertyNames(bikeTypes);
-  let data = Object.values(bikeTypes);
-  console.log(data);
-  const ctx = document.getElementById('chart-area2').getContext('2d');
-
-  let colors = [];
-  for (let i = 0; i < data.length; i++) {
-    let number1 = Math.floor(Math.random()*255 +1);
-    let number2 = Math.floor(Math.random()*255 +1);
-    let number3 = Math.floor(Math.random()*255 +1);
-    colors.push(`rgba(${number1}, ${number2}, ${number3}, 0.9)`);
-  }
-  console.log(colors);
-
-  const config = {
-    type: 'pie',
-    data: {
-      datasets: [{
-        data: data,
-        backgroundColor: colors,
-        label: 'Bikes'
-      }],
-      labels: label
-    },
-    options: {
-      legend: false,
-      responsive: true
-    }
-  };
-  window.myPie = new Chart(ctx, config);
-}
-
-export function buildTotalBikeChart(body, bikeIndex) {
-
-  let label = Object.getOwnPropertyNames(body);
-  let data = Object.values(body);
-  const ctx = document.getElementById('chart-area5').getContext('2d');
-
-  let colors = [];
-  for (let i = 0; i < data.length; i++) {
-    let number1 = Math.floor(Math.random()*255 +1);
-    let number2 = Math.floor(Math.random()*255 +1);
-    let number3 = Math.floor(Math.random()*255 +1);
-    colors.push(`rgba(${number1}, ${number2}, ${number3}, 0.9)`);
-  }
-  console.log(colors);
-
-  const config = {
-    type: 'pie',
-    data: {
-      datasets: [{
-        data: data,
-        backgroundColor: colors,
-        label: 'Bikes'
-      }],
-      labels: label
-    },
-    options: {
+      animation:{
+        circumference: 1 * Math.PI,
+        animateRotate: true
+      },
       legend: false,
       responsive: true
     }
@@ -151,22 +46,111 @@ export function buildPortlandBikeYearChart(body, bikeIndex) {
   let label = Object.getOwnPropertyNames(bikeYear);
   let data = Object.values(bikeYear);
   const ctx = document.getElementById('chart-area6').getContext('2d');
-
-
+// let pointColor = #FFF80D;
   const config = {
     type: 'line',
     data: {
       datasets: [{
+        pointBackgroundColor: "rgba(255, 240, 216,1)",
+        borderColor: "rgba(255, 240, 216,1)",
         data: data,
         label: 'Prevalence of Bike Manufacture Years Stolen'
       }],
       labels: label
     },
     options: {
+      spanGaps: false,
+      responsive: true
+    }
+  }
+  window.myLine = new Chart(ctx, config);
+}
+
+export function buildBikeTypeChart(body, bikeIndex) {
+  let bikeTypes = bikeIndex.bikeTypes(body);
+  let label = Object.getOwnPropertyNames(bikeTypes);
+  let data = Object.values(bikeTypes);
+  const ctx = document.getElementById('chart-area').getContext('2d');
+  let colors = randomColors(data);
+  const config = {
+    type: 'pie',
+    data: {
+      datasets: [{
+        hoverBorderWidth: 15,
+        data: data,
+        backgroundColor: colors,
+        label: 'Bikes'
+      }],
+      labels: label
+    },
+    options: {
+      animation:{
+        circumference: 1 * Math.PI,
+        animateRotate: true
+      },
+      legend: false,
       responsive: true
     }
   };
-  window.myLine = new Chart(ctx, config);
+  window.myPie = new Chart(ctx, config);
+}
+
+export function buildBikeByStolen(body, bikeIndex) {
+  let bikeTypes = bikeIndex.stolenStatus(body);
+  let label = Object.getOwnPropertyNames(bikeTypes);
+  let data = Object.values(bikeTypes);
+  const ctx = document.getElementById('chart-area2').getContext('2d');
+  let colors = randomColors(data);
+  const config = {
+    type: 'pie',
+    data: {
+      datasets: [{
+        hoverBorderWidth: 10,
+        data: data,
+        backgroundColor: colors,
+        label: 'Bikes'
+      }],
+      labels: label
+    },
+    options: {
+      animation:{
+        circumference: 15 * Math.PI,
+        animateRotate: true
+      },
+      legend: false,
+      responsive: true
+    }
+  };
+  window.myPie = new Chart(ctx, config);
+}
+
+export function buildTotalBikeChart(body, bikeIndex) {
+
+  let label = Object.getOwnPropertyNames(body);
+  let data = Object.values(body);
+  const ctx = document.getElementById('chart-area5').getContext('2d');
+  let colors = randomColors(data);
+  const config = {
+    type: 'pie',
+    data: {
+      datasets: [{
+        hoverBorderWidth: 15,
+        data: data,
+        backgroundColor: colors,
+        label: 'Bikes'
+      }],
+      labels: label
+    },
+    options: {
+      animation:{
+        circumference: 15 * Math.PI,
+        animateRotate: true
+      },
+      legend: false,
+      responsive: true
+    }
+  };
+  window.myPie = new Chart(ctx, config);
 }
 
 export function buildBikeYearChart(body, bikeIndex) {
@@ -174,18 +158,19 @@ export function buildBikeYearChart(body, bikeIndex) {
   let label = Object.getOwnPropertyNames(bikeYear);
   let data = Object.values(bikeYear);
   const ctx = document.getElementById('chart-area3').getContext('2d');
-
-
   const config = {
     type: 'line',
     data: {
       datasets: [{
+        pointBackgroundColor: "rgba(255, 240, 216,0)",
+        borderColor: "rgba(255, 240, 216,0)",
         data: data,
         label: 'Prevalence of Bike Manufacture Years Stolen'
       }],
       labels: label
     },
     options: {
+      spanGaps: false,
       responsive: true
     }
   };
@@ -209,4 +194,16 @@ export function buildBikeDetailCard(card) {
     </div>
     </div>`
   $('#detailCard').html(detailCard);
+}
+
+function randomColors(array){
+  let colors = [];
+  for (let i = 0; i < array.length; i++) {
+    const number1 = Math.floor(Math.random()*255 +1);
+    const number2 = Math.floor(Math.random()*255 +1);
+    const number3 = Math.floor(Math.random()*255 +1);
+    const color = `rgba(${number1}, ${number2}, ${number3}, 0.9)`;
+    colors.push(color);
+  }
+  return colors;
 }

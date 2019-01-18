@@ -6,47 +6,44 @@
 </head>
 <body>
   <header class ="header" role="banner">    </header>
-
     <h6 class="display-4" id="header">Statistcyclist</h6>
 
     <div class="container-fluid start-stats" >
+
       <div class="card-body staticGraphs">
-        <p class="card-text">Stolen Bike Types in Portland, OR</p>
+        <p class="graph-label">Stolen Bike Types in Portland, OR</p>
         <canvas id="chart-area4" width="524" height="262" class="chartjs-render-monitor" ></canvas>
       </div>
 
+
       <div class="card-body staticGraphs">
-        <p class="card-text">Stolen vs. Nonstolen in Portland, OR</p>
+        <p class="graph-label">Model Years Stolen in Portland, OR</p>
+        <canvas id="chart-area6" width="524" height="262" class="chartjs-render-monitor" ></canvas>
+      </div>
+
+      <div class="card-body staticGraphs">
+        <p class="graph-label">Bikes Stolen vs Not Stolen in Portland, OR</p>
         <canvas id="chart-area5" width="524" height="262" class="chartjs-render-monitor" ></canvas>
       </div>
 
-      <div class="card-body staticGraphs">
-        <p class="card-text">Model Years Stolen in Portland, OR</p>
-        <canvas id="chart-area6" width="524" height="262" class="chartjs-render-monitor" ></canvas>
-      </div>
     </div>
 
     <div class="container-fluid userGraphs">
-      <div class="card userGraphCard">
-        <div class="card-body">
-          <h5 class="card-title">Bike Brands In Your Search Area</h5>
-          <canvas id="chart-area" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
-        </div>
+      <div class="card-body userGraphCard">
+        <p class="location-based-graphs">Bike Brands In Your Search Area</p>
+        <canvas id="chart-area" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
       </div>
 
-      <div class="card userGraphCard">
-        <div class="card-body">
-          <h5 class="card-title">Stolen bikes vs unstolen bikes in your Area</h5>
-          <canvas id="chart-area2" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
-        </div>
+      <div class="card-body userGraphCard">
+        <p class="location-based-graphs">Occurances of Particular Years Stolen in Your Area</p>
+        <canvas id="chart-area3" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
       </div>
 
-      <div class="card userGraphCard">
-        <div class="card-body">
-          <h5 class="card-title">Occurances of Particular Years Stolen in Your Area</h5>
-          <canvas id="chart-area3" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
-        </div>
+      <div class="card-body userGraphCard">
+        <p class="location-based-graphs">Stolen bikes vs unstolen bikes in your Area</p>
+        <canvas id="chart-area2" width="524" height="262" class="chartjs-render-monitor" style="display: block; height: 131px; width: 262px;"></canvas>
       </div>
+
     </div>
 
     <br><br><br>
@@ -63,25 +60,23 @@
               <!-- <label for="distance">Distance</label> -->
               <input class="form-control form-control-lg"  id="distance" type="text" name="" value="" placeholder="distance in miles">
             </div>
-
             <!-- /.row -->
-          </div>
         </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <button  id="search" type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
-            <!-- /.searchForm -->
-          </form>
-          </div>
-        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <button  id="search" type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+        <!-- /.searchForm -->
+      </form>
+      </div>
+    </div>
     <br>
 
     <div class="container-fluid">
       <h2 id="outputLabel">Bikes In your Area</h2>
       <div id="output"></div>
       <div id="detailCard"></div>
-
     </div>
   </body>
-  </html>
+</html>

@@ -34,6 +34,7 @@ body h3 {
 }
 
 .card-body {
+  color: white;
   border-radius: 15;
   border-spacing: 15%;
   margin-left: auto;
@@ -41,12 +42,18 @@ body h3 {
   box-shadow: 13%
 }
 
-.card-text {
-  font-size: 20px;
+.graph-label {
   color: white;
   text-align: center;
   font-style: normal;
-  font-size: 18px;
+  font-size: 30px;
+}
+
+.location-based-graphs {
+  color: black;
+  text-align: center;
+  font-style: normal;
+  font-size: 30px;
 }
 
 #output {
@@ -68,6 +75,7 @@ body h3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  color: white;
 }
 
 .userGraphs {
