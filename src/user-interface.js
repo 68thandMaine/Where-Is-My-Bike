@@ -177,7 +177,7 @@ export function buildPortlandBikeYearChart(body, bikeIndex) {
     data: {
       datasets: [{
         pointBackgroundColor: "rgba(255, 240, 216,0)",
-        borderColor: "rgba(255, 240, 216,0)",
+        borderColor: "rgba(255, 240, 216,0)",  
         data: data,
         label: 'Prevalence of Bike Manufacture Years Stolen'
       }],
