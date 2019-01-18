@@ -85,13 +85,13 @@ class BikeIndex {
     return counter;
   }
 
+  getBikeYear(object) {
+    return object.bikes.reduce(this.countYears, {});
+  }
+
   countYears(counter, bike) {
     counter[bike.year] = (counter[bike.year] || 0) + 1;
     return counter;
-  }
-
-  getBikeYear(object) {
-    return object.bikes.reduce(this.countYears, {});
   }
 
   weekday(object) {
@@ -105,9 +105,6 @@ class BikeIndex {
     console.log(counter);
     return counter;
   }
-
 }
-
-
 
 export { BikeIndex };

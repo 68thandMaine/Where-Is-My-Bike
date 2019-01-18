@@ -1,18 +1,40 @@
 html, body {
   background-color: #283138;
   padding: 50px;
+
 }
 
 html body {
   background-color: #283138;
   padding: 50px;
+  font-family: 'Bubbler One', sans-serif;
+
 }
 
 p {
   font-style: italic;
 }
 
+#header {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 100px;
+}
+
+body h2 {
+  font-size: 60px;
+  margin: 70px 0px 40px 0px;
+  color: white;
+  text-align: center;
+}
+
+body h3 {
+  font-size: 30px;
+  margin: 70px 0px 40px 0px;
+}
+
 .card-body {
+  color: white;
   border-radius: 15;
   border-spacing: 15%;
   margin-left: auto;
@@ -20,14 +42,28 @@ p {
   box-shadow: 13%
 }
 
+.graph-label {
+  color: white;
+  text-align: center;
+  font-style: normal;
+  font-size: 30px;
+}
+
+.location-based-graphs {
+  color: black;
+  text-align: center;
+  font-style: normal;
+  font-size: 30px;
+}
+
 #output {
+  display: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.header {
-  /* border-style: solid; */
-  /* position: relative; */
+#outputLabel {
+  display: none;
 }
 
 #header {
@@ -39,6 +75,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  color: white;
 }
 
 .userGraphs {
@@ -51,32 +88,19 @@ p {
 }
 
 .userGraphCard {
-  background-color: #283138;
-  border-top: 5;
-  border-radius: 15;
-  border-spacing: 15%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 13%;
-  margin-top: 15px;
+  background-color: rgba(255,255,255, 0.8);
+  border-radius: 25px;
+  margin: 40px 20px 50px 20px;
+  box-shadow: 0 8px 6px -6px #f2eed5;
+
 }
 
-
-
 .staticGraphs {
-  /* border-style: solid; */
-  border-color: white;
   background-color: #283138;
   border-radius: 15px;
-  /* border-spacing: 15%; */
-  /* margin-left: auto;
-  margin-right: auto; */
   margin: 40px 20px 50px 20px;
   box-shadow: 0 8px 6px -6px #f2eed5;
 }
-
-
-
 
 .userInput {
   max-width: 75em;
@@ -86,9 +110,26 @@ p {
   margin-top: 5%;
 }
 
-
 .bike {
-  background-color: gray;
-  margin: 10px;
-  padding: 10px;
+  background-color: rgba(255,255,255, 0.4);
+  margin: 18px;
+  padding: 30px;
+  font-size: 18px;
+  font-style: normal;
+}
+
+body h3 {
+  font-size: 30px;
+  margin: 10px 10px;
+}
+
+.bike p {
+  font-style: normal;
+}
+
+.card-text {
+  color: black;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 2px;
 }

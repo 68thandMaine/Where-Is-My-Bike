@@ -1,9 +1,9 @@
 import { BikeIndex } from './bike-index.js';
 import { buildBikeCards, buildBikeTypeChart, buildTotalBikeChart, buildBikeDetailCard, buildBikeYearChart, buildPortlandStolenStats, buildPortlandBikeYearChart, buildBikeByStolen } from './user-interface.js'
-import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 import Chart from 'chart.js';
 
 $(document).ready(function() {
@@ -49,6 +49,7 @@ $(document).ready(function() {
   $('.searchForm').submit(function(event) {
     event.preventDefault();
     $('.userGraphCard').slideDown();
+    $("#outputLabel").show();
 
     let location = $('#location').val();
     $('#location').val("");
