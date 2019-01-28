@@ -30,7 +30,7 @@ $(document).ready(function() {
   });
 
   $("#output").on("click", "div", function(){
-    let bikeId = $(this).attr("value");
+
     console.log(bikeId);
     let promise3 = bikeIndex.getBikeById(bikeId);
     promise3.then(function(response) {

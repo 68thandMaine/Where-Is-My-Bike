@@ -7,6 +7,9 @@
 ## Description
 
 Bike information for your area.
+This app uses BikeIndex API to create return data specific to the types of bikes that are being stolen in an area based off of a user's input.
+
+It uses chart.Js to generate graphs of stolen vs unstolen bikes.
 
 ## Setup/Installation Requirements
 
